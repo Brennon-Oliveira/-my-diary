@@ -1,0 +1,72 @@
+#header {
+    grid-area: header;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background-color: transparent;
+            border: none;
+            height: 30px;
+            cursor: pointer;
+
+            span {
+                display: block;
+                background-color: var(--black);
+                color: var(--black);
+                width: 2rem;
+                height: 4px;
+
+                @mixin menu {
+                    content: "";
+                    display: block;
+                    width: 2rem;
+                    height: 4px;
+                    background-color: currentColor;
+                    position: relative;
+                    transition: 0.3s;
+                }
+
+                &:before {
+                    @include menu;
+                    top: -10px;
+                }
+
+                &:after {
+                    @include menu;
+                    top: 7px;
+                }
+
+                &.active {
+                    background-color: transparent;
+
+                    &:after {
+                        transform: rotate(-135deg);
+                        top: -3px;
+                    }
+
+                    &:before {
+                        top: 0px;
+                        transform: rotate(135deg);
+                    }
+                }
+            }
+        }
+
+        h1 {
+            @extend .title;
+        }
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.25rem;
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
