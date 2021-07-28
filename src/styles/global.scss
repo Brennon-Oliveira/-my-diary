@@ -11,7 +11,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style: none;
 }
 
 .container {
@@ -39,6 +38,9 @@ body {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 a {
     font-family: "Fira Sans";
     color: var(--black);
@@ -47,9 +49,14 @@ a {
 
 p,
 span,
+li,
 label {
     font-family: "Open Sans";
     color: var(--black);
+}
+
+ul {
+    list-style: none;
 }
 
 #App {
@@ -65,13 +72,6 @@ label {
     section,
     aside {
         overflow-y: auto;
-    }
-
-    #textEditor {
-        width: 100%;
-        background-color: red;
-        grid-area: textEditor;
-        transition: 0.5s;
     }
 
     &.notMenu {
@@ -98,3 +98,4 @@ label {
 
 @import "./components/Header.scss";
 @import "./components/SideBar.scss";
+@import "./components/TextEditor.scss";
