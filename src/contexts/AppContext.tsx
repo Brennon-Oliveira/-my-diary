@@ -1,10 +1,4 @@
-import {
-    createContext,
-    MouseEventHandler,
-    ReactNode,
-    useEffect,
-    useState,
-} from "react";
+import { createContext, ReactNode, useState } from "react";
 
 interface data {
     children: ReactNode;
@@ -18,7 +12,7 @@ interface AppContextData {
 export const AppContext = createContext({} as AppContextData);
 
 export function AppProvider(props: data) {
-    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const [menuIsOpen, setMenuIsOpen] = useState(true);
 
     function toggleMenu(e: { type: String; preventDefault: () => void }) {
         var menu: HTMLElement | null = document.querySelector(
@@ -27,8 +21,15 @@ export function AppProvider(props: data) {
 
         var app: HTMLElement | null = document.querySelector("#App");
         if (menu && app) {
-            menu.classList.toggle("active");
-            app.classList.toggle("notMenu");
+            if (menuIsOpen) {
+                setMenuIsOpen(false);
+                menu.classList.remove("active");
+                app.classList.add("notMenu");
+            } else {
+                setMenuIsOpen(true);
+                menu.classList.add("active");
+                app.classList.remove("notMenu");
+            }
         }
     }
 

@@ -1,0 +1,74 @@
+$sidebarWidth: 300px;
+
+#sidebar {
+    width: $sidebarWidth;
+    border-right: 1px solid var(--black);
+    grid-area: sidebar;
+    transition: 0.5s;
+
+    -webkit-box-shadow: 10px 10px 77px -16px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 77px -16px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 77px -16px rgba(0, 0, 0, 0.75);
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem 0;
+
+        h2 {
+            padding: 0 2%;
+        }
+
+        nav {
+            width: 100%;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    $border: #444;
+                    width: 100%;
+
+                    a {
+                        $size: 42px;
+                        display: flex;
+                        width: 100%;
+                        height: $size;
+                        background-color: var(--white);
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom: 1px solid $border;
+                        font-size: 1.15rem;
+
+                        span {
+                            $diff: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: $size - $diff;
+                            width: $size - $diff;
+                            height: $size - $diff;
+                            background-color: #ccc;
+                        }
+
+                        &:hover {
+                            background-color: rgb(233, 233, 233);
+                        }
+                    }
+
+                    &:not(:last-of-type) a:hover::before {
+                        content: "> ";
+                        margin-right: 0.5rem;
+                    }
+
+                    &:first-of-type a {
+                        border-top: 1px solid $border;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ export default function Header(props: data) {
                         toggleMenu(param);
                     }}
                 >
-                    <span></span>
+                    <span className="active"></span>
                 </button>
                 <h1>
                     <a href="">Easy Notes</a>

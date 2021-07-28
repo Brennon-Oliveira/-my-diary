@@ -8,9 +8,9 @@ function App() {
     return (
         <AppProvider>
             <div id="App">
-                <Header />
-                <SideBar />
                 <TextEditor />
+                <SideBar />
+                <Header />
             </div>
         </AppProvider>
     );

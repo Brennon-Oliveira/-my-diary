@@ -1,5 +1,7 @@
 #header {
     grid-area: header;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--black);
 
     .container {
         display: flex;
